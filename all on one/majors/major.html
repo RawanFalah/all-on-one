@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majors</title>
+    <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="computer.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&family=Supermercado+One&display=swap');
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background-color: antiquewhite;
+}
+
+/* Button */
+button {
+    border: none;
+    background-color: transparent;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: rgb(102, 102, 102);
+}
+
+i {
+    color: gray;
+    font-size: 4em;
+}
+
+/* Book */
+.book {
+    width: 350px;
+    height: 500px;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.paper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front {
+    backface-visibility: hidden;
+    border-left: 3px solid antiquewhite;
+}
+
+.front, 
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(253, 255, 158);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper Flipped */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg)
+}
+
+/* Paper Z-index */
+#p1 {
+    z-index: 3;
+}
+
+#p2 {
+    z-index: 2;
+}
+
+#p3 {
+    z-index: 1;
+}
+
+/* Customization */
+
+.book-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 45px;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+.cover-img {
+    width: 200px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+#b1 {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    justify-content: space-around;
+    
+}
+
+#b1 h2 {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+
+/* #b1 p {
+    margin-bottom: 20px;
+} */
+#b3{
+   
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 45px;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    text-align: center;
+    font-size: 10px;
+}
+
+    </style>
+</head>
+<body>
+    
+    <button id="prev-btn">
+        <i class="fas fa-arrow-circle-left"></i>
+    </button>
+
+    <!-- The Book -->
+    <div id="book" class="book">
+        <!-- Paper 1 -->
+        <div id="p1" class="paper">
+            <div class="front">
+                <div id="f1" class="front-content">
+                    <h1 class="book-title">تخصصات الكلية الرقمية</h1>
+                    <img class="cover-img" src="Working Away.gif" >
+                </div>
+            </div>
+            <div class="back">
+                <div id="f2" class="back-content">
+                    <h1>تخصص البرمجيات</h1>
+                    <!-- <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- Paper 2 -->
+        <div id="p2" class="paper">
+            <div class="front">
+                <div id="f2" class="front-content">
+                    <h1>تخصص الشبكات</h1>
+                </div>
+            </div>
+            <div class="back">
+                <div id="b2" class="back-content">
+                    <h1>تخصص دعم فني</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Paper 3 -->
+        <div id="p3" class="paper">
+            <div class="front">
+                <div id="f3" class="front-content">
+                    <h1>تخصص وسائط متعددة</h1>
+                </div>
+            </div>
+            <div class="back">
+                <div id="b3" class="back-content">
+                    <h1>وللمزيد من المعلومات عن التخصصات</h1>
+                    <a href="https://drive.google.com/file/d/1-DXJReFGyTigywSlwkMn-e2MTSGAaV2T/view" target="blank"><img src="fav.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="next-btn">
+        <i class="fas fa-arrow-circle-right"></i>
+    </button>
+
+
+
+    <script>
+        // References to DOM elements
+const prevBtn = document.querySelector('#prev-btn');
+const nextBtn = document.querySelector('#next-btn');
+const book = document.querySelector('#book');
+
+const paper1 = document.querySelector('#p1')
+const paper2 = document.querySelector('#p2')
+const paper3 = document.querySelector('#p3')
+
+// Event listeners
+prevBtn.addEventListener("click", goPrevious);
+nextBtn.addEventListener("click", goNext);
+
+// Business Logic
+let currentState = 1;
+let numOfPapers = 3;
+let maxState = numOfPapers + 1;
+
+
+function openBook() {
+    book.style.transform = "translateX(50%)";
+    prevBtn.style.transform = "translateX(-180px)";
+    nextBtn.style.transform = "translateX(180px)";
+}
+
+function closeBook(isFirstPage) {
+    if(isFirstPage) {
+        book.style.transform = "translateX(0%)";
+    } else {
+        book.style.transform = "translateX(100%)";
+    }
+    prevBtn.style.transform = "translateX(0px)";
+    nextBtn.style.transform = "translateX(0px)";
+}
+
+function goNext() {
+    if(currentState < maxState) { 
+        switch(currentState) {
+            case 1:
+                openBook();
+                paper1.classList.add("flipped");
+                paper1.style.zIndex = 1;
+                break;
+            case 2:
+                paper2.classList.add("flipped");
+                paper2.style.zIndex = 2;
+                break;
+            case 3:
+                closeBook(false);
+                paper3.classList.add("flipped");
+                paper3.style.zIndex = 3;
+                break;
+            default: 
+                throw new Error("unkown state");    
+        }
+
+        currentState++;
+    }
+}
+
+function goPrevious() {
+    if(currentState > 1) {
+        switch(currentState) {
+            case 2:
+                closeBook(true);
+                paper1.classList.remove("flipped");
+                paper1.style.zIndex = 3;
+                break;
+            case 3:
+                paper2.classList.remove("flipped");
+                paper2.style.zIndex = 2;
+                break;
+            case 4: 
+                openBook()
+                paper3.classList.remove("flipped");
+                paper3.style.zIndex = 1;
+                break;
+        }
+
+        currentState--;
+    }
+}
+    </script>
+
+
+</body>
+</html>
